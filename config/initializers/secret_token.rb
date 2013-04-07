@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Finance::Application.config.secret_token = '23c6e7a9419efb1145b32bbeb35babe64882257995606fe5e603a0f1049c2fc7adb3189d476be80037de4fb2e79123265aec9f2bbd279ee2da4f73493e8e8242'
+Finance::Application.config.secret_token = '123cb74a5f204e0a0ffa636796cb4854574af36b66d3661c892c6d7c51710aafd013d0bedca569cc3db8851abe3da487f051f238af3e805ea8a9f48cfaad5e06'
