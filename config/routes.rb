@@ -1,5 +1,7 @@
 Finance::Application.routes.draw do
 
+  devise_for :users
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :assets
@@ -15,7 +17,7 @@ Finance::Application.routes.draw do
   match 'help', to: 'static_pages#help'
   match 'about', to: 'static_pages#about'
   match 'signout', to: 'sessions#destroy', via: :delete
-
+  match '/auth/:provider/callback' => 'sessions#create'
 
 
   # The priority is based upon order of creation:
