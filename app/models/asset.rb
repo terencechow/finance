@@ -14,6 +14,6 @@
 
 class Asset < ActiveRecord::Base
   attr_accessible :cost, :most_recent_date, :quantity, :symbol
-  belong_to :portfolios
+  belong_to :portfolio
   has_many :asset_histories, :through => :asset_informations
 end

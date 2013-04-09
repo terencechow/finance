@@ -2,21 +2,21 @@
 	
 	<li><%=link_to "Articles", articles_path %></li>
 	<li><%=link_to "Portfolios", portfolios_path %></li>
-	<li><%=link_to "Submit Article", new_articles_path %></li>
+	<li><%=link_to "Submit Article", new_article_path %></li>
 	
-	<li><%=link_to "Add a Transaction", new_transactions_path %></li>
+	<li><%=link_to "Add a Transaction", new_transaction_path %></li>
 	
 
 	<li class = "dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%=current_user.name%>
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%=current_user.username %>
       		<b class="caret"></b>
       	</a>
 	
 		<ul class = "dropdown-menu" role="menu" >
 			<li><%=link_to "My Profile", user_path(current_user.id) %></li>
-			<li><%=link_to "Settings", edit_user_path(current_user.id) %></li>
+			<li><%=link_to "Settings", edit_user_registration_path %></li>
 			<li class='divider'</li>
-			<li><%=link_to "Sign Out", signout_path %></li>
+			<li><%=link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 
 		</ul>
 	</li>		

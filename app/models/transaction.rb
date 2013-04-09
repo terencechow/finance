@@ -15,5 +15,5 @@
 
 class Transaction < ActiveRecord::Base
   attr_accessible :action, :price, :quantity, :symbol, :transact_date
-  belongs_to :portfolios
+  belongs_to :portfolio
 end

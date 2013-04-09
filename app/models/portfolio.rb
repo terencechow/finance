@@ -15,7 +15,7 @@ class Portfolio < ActiveRecord::Base
   
   validates :name, presence: true
 
-  belong_to :users
+  belongs_to :user
   has_many :assets, :dependent => :destroy
   has_many :comments, :as => :commentable
   has_many :transactions

@@ -14,6 +14,6 @@
 
 class AssetInformation < ActiveRecord::Base
   attr_accessible :name, :sector, :symbol
-  belongs_to :assets
-  belongs_to :asset_histories
+  belongs_to :asset
+  belongs_to :asset_history
 end

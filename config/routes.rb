@@ -1,9 +1,10 @@
 Finance::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+                     controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:show]
+
   resources :assets
   resources :portfolios
   resources :transactions
@@ -11,13 +12,11 @@ Finance::Application.routes.draw do
   resources :articles
 
 
-  root to: 'static_pages#home'
+  root :to => 'static_pages#home'
 
   match 'home', to: 'static_pages#home'
   match 'help', to: 'static_pages#help'
   match 'about', to: 'static_pages#about'
-  match 'signout', to: 'sessions#destroy', via: :delete
-  match '/auth/:provider/callback' => 'sessions#create'
 
 
   # The priority is based upon order of creation:

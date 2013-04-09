@@ -12,5 +12,5 @@
 
 class Picture < ActiveRecord::Base
   attr_accessible :name, :picture
-  belongs_to :articles
+  belongs_to :article
 end
